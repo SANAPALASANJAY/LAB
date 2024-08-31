@@ -15,7 +15,7 @@ int main()
     printf("Enter your computers marks:");
     scanf("%d", &computers);
     
-    float total marks (Maths + Science + social + english + computers);
+    float total_marks = (Maths + Science + social + english + computers);
     float percentage = (total_marks/500)*100;
     printf("Total Marks: %f\n", total_marks);
     printf("Percentage %f", percentage);
