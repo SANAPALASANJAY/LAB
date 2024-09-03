@@ -19,7 +19,7 @@ int main()
     }
     else
     {
-        printf("NOT PRIME");
+        printf("COMPOSITE");
     }
     return 0;
 }
