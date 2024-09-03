@@ -1,24 +1,23 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main()
 {
-    int n;
-    float sum, sum_odd,sum_even;
-    printf("Enter the number: ");
+    int n,sum_odd= 0,sum_even = 0;
+    printf("Enter the number :");
     scanf("%d",&n);
-    sum = (n*(n+1))/2;
-    if(n % 2 == 0) 
-    { 
-        sum_odd = (n*n)/4;
-        sum_even = sum-sum_odd; 
-    }
-    else
+    while(n>0)
     {
-        sum_odd = ((n+1)*(n+1))/4;
-        sum_even = sum-sum_odd;
+        if(n%2==0)
+        {
+            sum_even += n;
+        }
+        else
+        {
+            sum_odd += n;
+        }
+        n--;
     }
-    printf("sum of odd numbers = %f\n",sum_odd);
-    printf("sum of even numbers = %f",sum_even);
+    printf("Sum of even: %d\n",sum_even);
+    printf("Sum of odd: %d",sum_odd);
     return 0;
-
 }
