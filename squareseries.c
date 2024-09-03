@@ -9,7 +9,7 @@ int main()
     for( int i = 1;i <= n; i++)
     {
         x = pow(i,2);
-        printf("%d ",x);
+        printf("%d,",x);
     }
     return 0;
 }
