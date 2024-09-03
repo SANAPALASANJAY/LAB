@@ -4,7 +4,7 @@
 int main()
 {
     int n,count,v,arm,num;
-    int a;
+    int a = 0;
     printf("Enter the number: ");
     scanf("%d",&n);
     num = n;
@@ -14,12 +14,18 @@ int main()
         count++;
         n = n/10;
     }
-    printf("%d\n",count);
     for(int i = num; i > 0 ; i /= 10)
     {
         v = i%10;
         a = a + pow(v,count);
     }
-    printf("%d",a);
+    if(a==num)
+    {
+        printf("Armstrong number");
+    }
+    else
+    {
+        printf("Not an Armstrong number");
+    }
     return 0;
 }
