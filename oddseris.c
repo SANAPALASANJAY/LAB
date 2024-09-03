@@ -10,7 +10,7 @@ int main()
     {
         if(i%2==1)
         {
-            printf("%d ",i);
+            printf("%d,",i);
         }
     }
     return 0;
