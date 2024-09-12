@@ -11,22 +11,20 @@ int main()
     {
         scanf("%d",&a[i]);
     }
-    //assigning greatest values to compare with other elements
+    //assigning values to compare with other elements
     max = a[0]>a[1]?a[0]:a[1];
     min = a[0]<a[1]?a[0]:a[1];
     for(int i = 2;i<n;i++)
     {
         if(max<a[i])
         {
-            max = a[i];
-            
+            max = a[i]; 
         }
         if(a[i]<min)
         {
             min = a[i];
         }
     }
-    
     printf(" Greatest number is %d\n",max);
     printf(" lowest number is %d",min);
     return 0;
