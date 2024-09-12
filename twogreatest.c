@@ -12,8 +12,8 @@ int main()
         scanf("%d",&a[i]);
     }
     //assigning greatest values to compare with other elements
-    great1 = a[0];
-    great2 = a[1];
+    great1 = a[0]>a[1]?a[0]:a[1];
+    great2 = a[0]<a[1]?a[0]:a[1];
     for(int i = 2;i<n;i++)
     {
         if(great1<a[i])
