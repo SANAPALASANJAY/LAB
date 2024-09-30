@@ -3,6 +3,7 @@
 int main() 
 {
     int t;
+    printf("Enter number b/w 0 and 15\n");
     do{
     printf("Enter the number of test cases: ");
     scanf("%d",&t);// taking no of test cases to store the cases in array 
