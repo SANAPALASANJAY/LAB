@@ -3,8 +3,10 @@
 int main() 
 {
     int t;
+    do{
     printf("Enter the number of test cases: ");
     scanf("%d",&t);// taking no of test cases to store the cases in array 
+    }while(t>15 || t<0);
     int N[t];//for storing the cases
     printf("Enter the values\n");
     for(int i = 0;i<t;i++)
