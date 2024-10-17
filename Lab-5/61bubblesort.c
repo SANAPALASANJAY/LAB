@@ -16,9 +16,9 @@ int main()
         scanf("%d", &a[s]);
     }
 
-    for (j = 0; j < n; j++)
+    for (j = 0; j < n-1; j++)
     {
-        for (i = 0; i < n - 2 - j; i++)
+        for (i = 0; i < n - 1 - j; i++)
         {
             if (a[i] > a[i + 1])
             {
