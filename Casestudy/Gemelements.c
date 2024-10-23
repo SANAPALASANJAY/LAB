@@ -38,6 +38,7 @@ int main(){
     }
     //as the number will be integer 
     printf("%0.f",cmn);
+    return 0;
 }
 
 int cnt(char c,int n,int l,char arr[][100])
