@@ -35,7 +35,7 @@ int main()
         sum = sum + jars[i];
     }
     
-    float avg = ( (float) sum / n );
-    printf("Average = %f",avg);
+    int avg = (sum / n);
+    printf("Average = %d",avg);
     return 0;
 }
