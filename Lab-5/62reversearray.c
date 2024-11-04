@@ -1,5 +1,5 @@
 #include <stdio.h>
-int read_arr(int a[10]);
+
 int main()
 {
     int n;
