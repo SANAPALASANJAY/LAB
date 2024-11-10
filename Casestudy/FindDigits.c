@@ -22,7 +22,7 @@ int main()
         for(int k = N[j];k>0;k/=10)//separating each digit and checking if divisible
         {
             int a = k % 10;
-            if(N[j] % a == 0)
+            if(a != 0 && N[j] % a == 0)
             {
                 pos++;
             }
