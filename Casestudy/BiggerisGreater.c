@@ -16,18 +16,34 @@ int main()
     {
         int equal = 1;
         int x = strlen(w[i]);
-        int k = 0;
-        for (int j = 1; j < x; j++)
+        int point = x;
+        int op = 1;
+        for (int h = 0; h < x; h++)
         {
-            k++;
-            if (w[i][x - j] > w[i][x - j - 1])
+            int k = 0;
+            for (int j = 1; j < point; j++)
             {
-                char temp = w[i][x - k];
-                w[i][x - k] = w[i][x - k - 1];
-                w[i][x - k - 1] = temp;
-                strcpy(s[i],w[i]);
-                equal = 0;
-                break;
+                k++;
+                if ((w[i][x - j] > w[i][x - j - 1]) && (op == 1))
+                {
+                    char temp = w[i][x - k];
+                    w[i][x - k] = w[i][x - k - 1];
+                    w[i][x - k - 1] = temp;
+                    strcpy(s[i],w[i]);
+                    equal = 0;op =0;
+                    point = j;
+                    break;
+                }
+                
+                if ((w[i][x - j] < w[i][x - j - 1]) && (op != 1))
+                {
+                    char temp = w[i][x - k];
+                    w[i][x - k] = w[i][x - k - 1];
+                    w[i][x - k - 1] = temp;
+                    strcpy(s[i],w[i]);
+                    point = j;
+                    break;
+                }
             }
         }
         
