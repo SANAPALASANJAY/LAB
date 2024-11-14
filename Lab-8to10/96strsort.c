@@ -42,5 +42,10 @@ int main()
     {
         puts(str[i]);
     }
+    for (int i = 0; i < n; i++)
+    {
+         free(str[i]);   
+    }
+    free(str);
     return 0;
 }
