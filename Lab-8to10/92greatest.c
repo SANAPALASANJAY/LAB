@@ -23,5 +23,6 @@ int main()
     }
 
     printf("Greatest: %d\n", greatest);
+    free(a);
     return 0;
 }
