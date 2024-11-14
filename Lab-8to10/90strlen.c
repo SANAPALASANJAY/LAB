@@ -24,6 +24,6 @@ int main()
     
     printf("length with spaces: %d\n",lwiths);
     printf("length wihtout spaces: %d", lwithouts);
-    
+    free(text);
     return 0;
 }
