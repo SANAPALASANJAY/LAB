@@ -18,5 +18,6 @@ int main()
     }
 
     printf("No.of Words = %d\n", words);
+    free(str);
     return 0;
 }
