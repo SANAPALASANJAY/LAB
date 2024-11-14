@@ -5,26 +5,26 @@ int main()
 {
     int* real;
     int n;
-    int *;
-    printf("Enter the no of elemetns: ");
+    int *copied;
+    printf("Enter the no of elements: ");
     scanf("%d", &n);
-    a = (int*)malloc(n * sizeof(int));
-    b = (int*)malloc(n * sizeof(int));
+    real = (int*)malloc(n * sizeof(int));
+    copied = (int*)malloc(n * sizeof(int));
     printf("Enter the elements\n");
     
     for(int i = 0; i < n; i++)
     {
-        scanf("%d", &a[i]);
+        scanf("%d", &real[i]);
     }
     
     for(int i = 0; i < n; i++)
     {
-        *(b + i) = *(a + i);
+        *(copied + i) = *(real + i);
     }
     
     for(int i = 0; i < n; i++)
     {
-        printf("%d ",b[i]);
+        printf("%d ",copied[i]);
     }
     return 0;
 }
