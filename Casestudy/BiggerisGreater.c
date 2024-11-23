@@ -1,60 +1,83 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+
+int next_permutation(int n, char* string)
+{
+    int k = -1;
+    for (int i = 0; i < n - 1; i++)
+    {
+        if (string[i] < string[i + 1])
+        {
+            k = i;
+        }
+    }
+    if (k == -1)
+    {
+        return 0;
+    }
+    
+    int a = -1;
+    for (int i = k; i < n; i++)
+    {
+        if (string[i] > string[k])
+        {
+            a = i;
+        }
+    }
+    
+    char temp = string[a];
+    string[a] = string[k];
+    string[k] = temp;
+    
+    int i = k + 1;
+    int j = n - 1;
+    
+    while( i < j)
+    {
+        temp = string[i];
+        string[i++] = string[j];
+        string[j--] = temp;
+    }
+    
+    return 1;
+}
+
 
 int main() 
 {
-    int t; // no.of test cases
-    scanf("%d",&t);
-    char w[t][100],s[t][100];
-    //w is for storing string and s is for storing lexograpgically next string
-    for(int i = 0; i < t; i++)
-    {
-        scanf("%s",w[i]);
-    }
-    // loop for every test case
+    int t;
+    printf("Enter the number of test cases: ");
+    scanf("%d", &t);
+    char** string;
+    string = (char**)malloc(t * sizeof(char*));
     for (int i = 0; i < t; i++)
     {
-        int equal = 1;// assuming default equal as true ... turns false if below conditions satisties even once 
-        int x = strlen(w[i]);
-        int point = x;//
-        int op = 1;
-        for (int h = 0; h < x; h++)
+        string[i] = malloc(20 * sizeof(char));
+    }
+    
+    for (int i = 0; i < t; i++)
+    {
+        scanf("%s", string[i]);
+    }
+    
+    for (int i = 0; i < t; i++)
+    {
+        int n = strlen(string[i]);
+        if (next_permutation(n, string[i]))
         {
-            int k = 0;// checks characters from last (k is the key) for decrement
-            for (int j = 1; j < point; j++)
-            {
-                k++;
-                if ((w[i][x - j] > w[i][x - j - 1]) && (op == 1))//first operation is to swap the highest index element which is lower than its next
-                {
-                    char temp = w[i][x - k];
-                    w[i][x - k] = w[i][x - k - 1];
-                    w[i][x - k - 1] = temp;
-                    strcpy(s[i],w[i]);
-                    equal = 0;op =0;
-                    point = j;//the point where last op is done should be the end point for sorting again 
-                    break;
-                }
-                
-                if ((w[i][x - j] < w[i][x - j - 1]) && (op != 1))
-                {
-                    char temp = w[i][x - k];//after first operation the elemetns after the point before should be sorted small
-                    w[i][x - k] = w[i][x - k - 1];
-                    w[i][x - k - 1] = temp;
-                    strcpy(s[i],w[i]);
-                    point = j;
-                    break;
-                }
-            }
-        }
-        
-        if (equal)
-        {
-            printf("no answer\n");
+            puts(string[i]);
         }
         else
         {
-            puts(s[i]);
+            printf("no answer\n");
         }
     }
+    
+    for (int i = 0; i < t; i++)
+    {
+        free(string[i]);
+    }
+    free(string);
     return 0;
 }
