@@ -11,7 +11,7 @@ while True:
             val = float(input("Enter the price of product: "))
             Products[Name] = val
         except ValueError:
-            print("Invalid Price. Please enter a number")
+            print("Invalid Price. Please Try Again")
 
 print("\nPRODUCT ENQUIRY")
 print("Enter exit if you want to exit OR")
