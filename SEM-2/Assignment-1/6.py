@@ -1,14 +1,14 @@
 points = []
 
-for i in range(3):
+for i in range(10):
     points.append(list(map(int, input(f"Enter the coordinates of point {i+1} (x y z): ").split())))
 
 ans = [point[:] for point in points] 
 
-for i in range(3):
-    mindist = float(-1)
+for i in range(10):
+    mindist = float("inf")
     minidx = -1
-    for j in range(3):
+    for j in range(10):
         if j == i:
             continue
         
