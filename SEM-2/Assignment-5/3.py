@@ -38,7 +38,7 @@ def next_permutation(stri):
 strs = []
 
 for i in range(t):
-    x = input()
+    x = input().strip()
     strs.append(x)
 
 for i in range(t):
