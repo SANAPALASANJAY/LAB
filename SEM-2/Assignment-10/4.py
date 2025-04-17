@@ -1,28 +1,57 @@
 import numpy as np
-import random
-import math
 
-coord = []
+temp = []
+n = int(input("Enter the number of strings: "))
+print("Enter the strings", end = "\n")
+for i in range(n):
+    temp.append(input())
 
-for i in range(0, random.randint(10, 15)):
-    x = [random.randint(-100, 100), random.randint(-100, 100)]
-    coord.append(x)
+temp = np.array(temp)
 
-polar = np.array(coord, dtype=float)
-print("Your cartesian coordinates are ")
-print(polar)
+def centerAlign(argu:np.array):
+    ans = np.array([])
+    for i in range(len(argu)):
+        if (len(argu[i]) > 15):
+            x = len(argu[i]) - 15
+            x = x // 2
+            ans = np.append(ans, argu[i][x : x + 15])
+        else:
+            x = 15 - len(argu[i])
+            right = x // 2
+            left = x - right
 
-for i in range(len(polar)):
-    x = polar[i][0]
-    y = polar[i][1]
-    polar[i][0] = math.sqrt(pow(x, 2) + pow(y, 2))
-    if (x != 0):
-        polar[i][1] = (math.atan(y / x) * 180) / math.pi
-    else :
-        polar[i][1] = 90
+            a = ""
+            a = ("_" * left) + argu[i] + ("_" * right)
+            ans = np.append(ans, a)
+    return ans
+
+def leftAlign(argu:np.array):
+    ans = np.array([])
+    for i in range(len(argu)):
+        if (len(argu[i]) > 15):
+            ans = np.append(ans, argu[i][0:15])
+        else:
+            right = 15 - len(argu[i])
+
+            a = ""
+            a = argu[i] + ("_" * right)
+            ans = np.append(ans, a)
+    return ans
+
+def RightAlign(argu:np.array):
+    ans = np.array([])
+    for i in range(len(argu)):
+        if (len(argu[i]) > 15):
+            ans = np.append(ans, argu[i][len(argu[i]) - 15::])
+        else:
+            left = 15 - len(argu[i])
+
+            a = ""
+            a = ("_" * left) + argu[i]
+            ans = np.append(ans, a)
+    return ans
 
 
-print("The equivalent polar coordinates are:")
-print(polar)
-
-
+print(centerAlign(temp))
+print(leftAlign(temp))
+print(RightAlign(temp))
