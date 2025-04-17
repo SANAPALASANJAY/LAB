@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logos {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.logo-l{
+
+    margin: 5px 20px;
+    height: 90px;
+    width: 112.5px;
+}
+
+.logo-r{
+    margin: 5px 20px;
+    height: 90px;
+    width: 112.5px;
+}
+
+.logo-m {
+    object-fit: fill;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 60%;
+    min-width: 462px;
+}
+
+.optns {
+    margin: 10px 0;
+    height: 75px;
+    background-color: rgb(56, 130, 175);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.opt {
+    height: 40px;
+    margin-left: 15px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+.opt select {
+    background-color: rgb(56, 130, 175);
+    color: white;
+}
+
+.main {
+    display: flex;
+    height: 500px;
+    padding: 30px;
+}
+
+.mid {
+    background-image: url(presidnet.jpg);
+    background-size: cover;
+    object-fit: cover;
+    width: 65%;
+    height: 400px;
+    margin: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nt {
+    display: flex;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    height: 54px;
+    width: 30px;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.nt:hover {
+    opacity: 0.8;
+    border: 2px solid rgb(58, 143, 219);
+}
+
+.left ,.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+}
+
+.opttext {
+    height: auto; 
+    background-color: rgb(155, 211, 241);
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.opttext:hover {
+    color: red;
+}
+
+.marq {
+    color: red;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.foot {
+    height: 100px;
+    display: flex;
+}
+
+.pic {
+    background: url(nupdt.png);
+    background-size: cover;
+    width: 100px;
+}
+
+.links {
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.links div {
+    margin: 2.5px 0;
+}
